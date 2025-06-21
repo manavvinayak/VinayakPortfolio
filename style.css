@@ -457,6 +457,20 @@ body{
   gap: 3rem;
 }
 
+.profile-img {
+  width: 300px;
+  border-radius: 20px;
+  transition: all 0.4s ease;
+  filter: contrast(100%);
+}
+
+.profile-img:hover {
+  transform: scale(1.05);
+  filter: contrast(130%) brightness(110%);
+  box-shadow: 0 0 20px #00abf0;
+}
+
+
 .About .image img {
   width: 300px;
   height: auto;
@@ -522,7 +536,7 @@ body{
 /* ===== Achievements Section ===== */
 .Achievements {
   padding: 80px 10%;
-  background: #0f3248;
+  background: #081b29;
 }
 
 .Achievements h2 {
@@ -564,7 +578,7 @@ body{
 /* ===== Contact Section ===== */
 
 .Contact {
-background: #081b29;
+  background: #081b29;
 }
 
 .contact-heading h3 {
@@ -575,6 +589,7 @@ background: #081b29;
 }
 
 .contact-heading p {
+    margin-bottom: 5vh;
     text-align: center;
 
 }
@@ -624,6 +639,28 @@ background: #081b29;
 html {
   scroll-behavior: smooth;
 }
+
+#music-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #00abf0;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 22px;
+  color: #081b29;
+  cursor: pointer;
+  z-index: 999;
+  transition: background 0.3s ease;
+}
+
+#music-toggle:hover {
+  background: #0093d1;
+  color: white;
+}
+
 
 
 
