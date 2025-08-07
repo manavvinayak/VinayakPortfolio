@@ -38,8 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.classList.remove('no-scroll');
       });
     });
-    
-    document.addEventListener('click', function(event) {
+      document.addEventListener('click', function(event) {
       if (!navbar.contains(event.target) && !hamburger.contains(event.target)) {
         navbar.classList.remove('active');
         hamburgerLines[0].classList.remove('rotate-down');
@@ -48,28 +47,8 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.classList.remove('no-scroll');
       }
     });
-  });
 
-  // for music player
-  window.onload = function () {
-  const music = document.getElementById('bg-music');
-  const toggleBtn = document.getElementById('music-toggle');
-  let isPlaying = false;
-
-  toggleBtn.addEventListener('click', () => {
-    if (!isPlaying) {
-      music.play();
-      toggleBtn.textContent = '⏸️';
-    } else {
-      music.pause();
-      toggleBtn.textContent = '▶️';
-    }
-    isPlaying = !isPlaying;
-  });
-};
-
-
- window.onload = function () {
+  // Music player and glitter effect
   const music = document.getElementById('bg-music');
   const toggleBtn = document.getElementById('music-toggle');
   const glitterContainer = document.getElementById('glitter');
@@ -101,4 +80,17 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     isPlaying = !isPlaying;
   });
-};
+  // Smooth scrolling for navigation links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+});

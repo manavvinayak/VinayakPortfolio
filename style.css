@@ -292,7 +292,6 @@ body{
     animation: manipActiveHover .1s forwards;
     animation-delay: 4;
     pointer-events: none;
-
 }
 
 .home-imgHover:hover{
@@ -327,125 +326,238 @@ body{
 }
 
 /* Mobile View Styles */
-@media only screen and (max-width: 500px) {
-    /* Header adjustments */
-    .header {
-      padding: 1rem;
-      position: relative;
+@media only screen and (max-width: 768px) {
+    /* Header adjustments */    .header {
+        padding: 15px 5%;
+        position: fixed;
+        background: rgba(8, 27, 41, 0.95);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+    }
+    
+    .logo {
+        font-size: 20px;
     }
     
     /* Hamburger menu styles */
     .hamburger {
-      display: block;
-      position: absolute;
-      top: 1.5rem;
-      right: 1.5rem;
-      width: 30px;
-      height: 21px;
-      cursor: pointer;
-      z-index: 1000;
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 5%;
+        width: 30px;
+        height: 21px;
+        cursor: pointer;
+        z-index: 1000;
     }
     
     .hamburger-line {
-      width: 100%;
-      height: 3px;
-      background: #333;
-      margin: 5px 0;
-      transition: all 0.3s ease;
+        width: 100%;
+        height: 3px;
+        background: #00abf0;
+        margin: 5px 0;
+        transition: all 0.3s ease;
+        border-radius: 2px;
     }
     
-    /* Navbar styles for mobile */
-    .navbar {
-      position: fixed;
-      top: 0;
-      right: -100%;
-      width: 70%;
-      height: 100vh;
-      background: #fff;
-      box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-      transition: right 0.3s ease;
-      z-index: 999;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 2rem;
+    /* Navbar styles for mobile */    .navbar {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        height: 100vh;
+        background: rgba(8, 27, 41, 0.98);
+        -webkit-backdrop-filter: blur(15px);
+        backdrop-filter: blur(15px);
+        box-shadow: -5px 0 25px rgba(0, 0, 0, 0.3);
+        transition: right 0.4s ease;
+        z-index: 999;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        border-left: 2px solid #00abf0;
     }
     
     .navbar.active {
-      right: 0;
+        right: 0;
     }
     
     .navbar a {
-      font-size: 1.2rem;
-      padding: 10px 0;
-      display: block;
+        font-size: 1.2rem;
+        padding: 15px 0;
+        display: block;
+        color: #fff;
+        margin-left: 0;
+        position: relative;
+        transition: all 0.3s ease;
+    }
+    
+    .navbar a:hover,
+    .navbar a.active {
+        color: #00abf0;
+        transform: translateX(10px);
     }
     
     /* Home section adjustments */
     .home {
-      padding: 2rem;
-      text-align: center;
+        padding: 80px 5% 20px;
+        text-align: center;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 100vh;
+    }
+    
+    .home-content {
+        max-width: 100%;
+        z-index: 2;
     }
     
     .home-content h1 {
-      font-size: 2rem;
-      line-height: 1.2;
+        font-size: 2.2rem;
+        line-height: 1.2;
+        margin-bottom: 10px;
     }
     
     .home-content h3 {
-      font-size: 1.2rem;
+        font-size: 1.3rem;
+        margin-bottom: 15px;
     }
     
     .home-content p {
-      font-size: 0.9rem;
-      margin: 1rem 0;
+        font-size: 0.95rem;
+        margin: 1rem 0 2rem;
+        line-height: 1.6;
     }
     
     .btn-box {
-      flex-direction: column;
-      gap: 1rem;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        height: auto;
     }
     
     .btn-box a {
-      width: 100%;
+        width: 100%;
+        max-width: 250px;
+        margin: 0 auto;
     }
     
     .home-sci {
-      justify-content: center;
-      margin-top: 2rem;
+        position: relative;
+        bottom: auto;
+        width: 100%;
+        justify-content: center;
+        margin-top: 2rem;
+        gap: 15px;
+    }
+      /* Hide home-imgHover on mobile */
+    .home-imgHover {
+        display: none;
+    }
+      /* About section mobile adjustments */
+    .About {
+        flex-direction: column;
+        padding: 60px 5%;
+        text-align: center;
+        gap: 2rem;
     }
     
-    /* Hide hamburger on desktop */
-    .hamburger {
-      display: none;
+    .About .image img,
+    .profile-img {
+        width: 250px;
+        height: 300px;
+        object-fit: cover;
     }
-  }
-  
+    
+    /* Show Vinayak profile in About section on mobile */
+    .About .image {
+        margin: 0 auto;
+    }
+    
+    .About .para1 p {
+        font-size: 0.95rem;
+        text-align: left;
+    }
+    
+    /* Experience section mobile adjustments */
+    .Experience {
+        padding: 60px 5%;
+    }
+    
+    .Experience .heading {
+        font-size: 1.8rem;
+    }
+    
+    .job-item {
+        padding: 15px;
+    }
+    
+    /* Achievements section mobile adjustments */
+    .Achievements {
+        padding: 60px 5%;
+    }
+    
+    .Achievements h2 {
+        font-size: 1.8rem;
+    }
+    
+    .acheive-items {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .acheive-item {
+        padding: 15px;
+    }
+    
+    /* Contact section mobile adjustments */
+    .Contact {
+        padding: 60px 5%;
+    }
+    
+    .contact-heading h3 {
+        font-size: 1.8rem;
+    }
+    
+    .contact-form {
+        padding: 0 10px;
+    }
+    
+    /* Music toggle button mobile adjustments */
+    #music-toggle {
+        bottom: 15px;
+        right: 15px;
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+}
   /* Hamburger animation styles */
-  .hamburger-line.rotate-down {
+.hamburger-line.rotate-down {
     transform: rotate(45deg) translate(5px, 5px);
-  }
-  
-  .hamburger-line.rotate-up {
+}
+
+.hamburger-line.rotate-up {
     transform: rotate(-45deg) translate(5px, -5px);
-  }
-  
-  .hamburger-line.hide {
+}
+
+.hamburger-line.hide {
     opacity: 0;
-  }
-  
-  /* Prevent scrolling when menu is open */
-  .no-scroll {
+}
+
+/* Prevent scrolling when menu is open */
+.no-scroll {
     overflow: hidden;
-  }
-  
-  /* Desktop styles - hide hamburger */
-  @media only screen and (min-width: 769px) {
+}
+
+/* Desktop styles - hide hamburger */
+@media only screen and (min-width: 769px) {
     .hamburger {
-      display: none;
+        display: none;
     }
-  }
+}
 
   /* ===== About Section ===== */
 .About {
@@ -693,6 +805,80 @@ html {
     transform: scale(1.2);
     opacity: 1;
   }
+}
+
+/* Tablet View Styles */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    .header {
+        padding: 15px 8%;
+    }
+    
+    .home {
+        padding: 0 8%;
+    }
+    
+    .home-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .home-content h3 {
+        font-size: 1.5rem;
+    }
+    
+    .About {
+        padding: 60px 8%;
+        gap: 2rem;
+    }
+    
+    .Experience {
+        padding: 60px 8%;
+    }
+    
+    .Achievements {
+        padding: 60px 8%;
+    }
+    
+    .Contact {
+        padding: 60px 8%;
+    }
+}
+
+/* Small mobile devices */
+@media only screen and (max-width: 480px) {
+    .home-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .home-content h3 {
+        font-size: 1.1rem;
+    }
+    
+    .home-content p {
+        font-size: 0.9rem;
+    }
+    
+    .btn-box a {
+        font-size: 0.95rem;
+        height: 45px;
+    }
+    
+    .About .image img,
+    .profile-img {
+        width: 200px;
+        height: 250px;
+    }
+    
+    .acheive-item {
+        padding: 12px;
+    }
+    
+    .achieve-heading h3 {
+        font-size: 1rem;
+    }
+    
+    .achieve-content p {
+        font-size: 0.9rem;
+    }
 }
 
 
